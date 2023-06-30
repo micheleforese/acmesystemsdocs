@@ -1,0 +1,109 @@
+site_name: Acme Systems Docs
+
+theme:
+  name: material
+  logo: assets/LogoAcmeSystemsBlue_160.png
+  palette:
+    # Palette toggle for light mode
+    - scheme: slate
+      # primary: light blue
+      # accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Palette toggle for dark mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: youtube
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - navigation.tracking
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+  icon:
+    tag:
+      html: fontawesome/brands/html5
+      js: fontawesome/brands/js
+      css: fontawesome/brands/css3
+
+extra:
+  tags:
+    H10: h10
+    HTML5: html
+    JavaScript: js
+    CSS: css
+
+plugins:
+  - search:
+      lang: en
+  - tags
+
+nav:
+  - H10:
+      - h10/index.md
+      - Pinout: h10/pinout.md
+      - Mechanical: h10/mechanical.md
+      - PCB Reference: h10/pcb_reference.md
+      - Software Reference: h10/software_reference.md
+  - RoadRunner:
+      - RoadRunner/index.md
+  - Examples:
+      - examples/index.md
+      - Code: examples/code.md
+      - Math: examples/math.md
+      - Graphs: examples/graphs.md
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic:
+      mode: view
+  - pymdownx.details
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
+  - pymdownx.keys
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
