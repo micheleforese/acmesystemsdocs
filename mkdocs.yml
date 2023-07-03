@@ -1,4 +1,10 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
 site_name: Acme Systems Docs
+
+repo_name: micheleforesedev
+repo_url: https://github.com/micheleforesedev/acmesystemsdocs
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -21,27 +27,33 @@ theme:
         icon: material/brightness-7
         name: Switch to dark mode
   features:
+    - content.action.edit
     - content.code.annotate
     - content.code.copy
-    - navigation.tracking
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
     - navigation.instant
+    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - navigation.indexes
     - navigation.top
-    - toc.follow
-    - search.suggest
+    - navigation.tracking
     - search.highlight
     - search.share
+    - search.suggest
+    - toc.follow
   icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
     tag:
       html: fontawesome/brands/html5
       js: fontawesome/brands/js
       css: fontawesome/brands/css3
 
 extra:
+  generator: false
   tags:
     H10: h10
     HTML5: html
@@ -52,16 +64,20 @@ plugins:
   - search:
       lang: en
   - tags
+  - glightbox
 
 nav:
+  - HOME: index.md
   - H10:
       - h10/index.md
       - Pinout: h10/pinout.md
       - Mechanical: h10/mechanical.md
       - PCB Reference: h10/pcb_reference.md
       - Software Reference: h10/software_reference.md
-  - RoadRunner:
+  - Road Runner:
       - RoadRunner/index.md
+      - Declarations of conformity: etc/declarations_of_conformity.md
+      - Create the Linux boot image: RoadRunner/create_the_linux_boot_image.md
   - Examples:
       - examples/index.md
       - Code: examples/code.md
@@ -87,11 +103,15 @@ markdown_extensions:
   - pymdownx.critic:
       mode: view
   - pymdownx.details
-  - pymdownx.highlight:
-      use_pygments: true
   - pymdownx.inlinehilite
   - pymdownx.smartsymbols
   - pymdownx.keys
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -99,6 +119,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra_css:
   - stylesheets/extra.css
