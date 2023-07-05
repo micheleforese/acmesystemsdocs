@@ -22,10 +22,7 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: youtube
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+
   features:
     - content.action.edit
     - content.code.annotate
